@@ -1,7 +1,7 @@
 import React, {useRef} from "react"
 import { WordWriteForm } from "./Styles"
 import { useDispatch } from "react-redux"
-import { createWord, createWordFB } from "./redux/wordlist"
+import { createWordFB } from "./redux/wordlist"
 import { useNavigate } from "react-router-dom"
 
 const NewWord = (props) => {

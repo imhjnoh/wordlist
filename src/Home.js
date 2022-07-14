@@ -2,18 +2,14 @@ import React, { useEffect } from "react";
 import { WordContainer, NewButton } from "./Styles";
 import WordCard from "./WordCard";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { loadWordFB } from "./redux/wordlist";
+import { useSelector } from "react-redux";
 
 const Home = (props) => {
   const navigate = useNavigate();
   const wordlist = useSelector((state) => state.wordlist);
   console.log(wordlist);
 
-//   const dispatch = useDispatch();
-//   dispatch(loadWordFB());
   useEffect(() => {
-    
   }, [wordlist]);
 
   return (

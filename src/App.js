@@ -1,13 +1,10 @@
-import logo from "./logo.svg";
 import "./App.css";
-import styled, { ThemeProvider } from "styled-components";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
-import { theme, Header, Container, NewButton } from "./Styles";
+import { theme, Header, Container } from "./Styles";
 import NewWord from "./NewWord";
 import {useEffect} from "react"
-import { db } from "./firebase";
-import {collection, getDocs} from "firebase/firestore/lite"
 import {useDispatch} from "react-redux"
 import { loadWordFB } from "./redux/wordlist";
 import UpdateWord from "./UpdateWord";
@@ -17,7 +14,7 @@ function App() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadWordFB())
-  }, [])
+  })
   return (
     <ThemeProvider theme={theme}>
       <Container>

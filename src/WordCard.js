@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Card, ToolBox } from "./Styles";
 import { deleteWordFB, updateWordFB } from "./redux/wordlist";
 import {useDispatch} from "react-redux"
@@ -7,7 +6,6 @@ import {useNavigate} from "react-router-dom"
 
 
 const WordCard = (props) => {
-  const tmpdone = 0;
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const deleteOnClick = () => {
