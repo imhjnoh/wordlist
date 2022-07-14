@@ -89,7 +89,7 @@ export default function reducer(state = initialState, action = {}) {
       const new_wordlist = state;
       new_wordlist.delete(action.word_id);
       console.log(action.word_id, new_wordlist);
-      return [...new_wordlist];
+      return new Map([...new_wordlist]);
     }
     default: {
       return state;
