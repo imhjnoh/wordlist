@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const Home = (props) => {
   const navigate = useNavigate();
-  const wordlist = useSelector((state) => state.wordlist);
+  const wordlist = useSelector((state) => state.wordlist.get("wordlist"));
   console.log(wordlist);
 
   useEffect(() => {

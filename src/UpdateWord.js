@@ -8,7 +8,7 @@ const UpdateWord = (props) => {
   const wid = useParams().word_id;
   const navigate = useNavigate()
   console.log(wid);
-  const worddata = useSelector((state) => state.wordlist.get(wid));
+  const worddata = useSelector((state) => state.wordlist.get("wordlist").get(wid));
   console.log("🔴", worddata);
   const wordRef = useRef();
   const proRef = useRef();

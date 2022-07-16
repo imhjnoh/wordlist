@@ -5,13 +5,14 @@ import Home from "./Home";
 import { theme, Header, Container } from "./Styles";
 import NewWord from "./NewWord";
 import {useEffect} from "react"
-import {useDispatch} from "react-redux"
+import {useDispatch, useSelector} from "react-redux"
 import { loadWordFB } from "./redux/wordlist";
 import UpdateWord from "./UpdateWord";
+import Spinner from "./Spinner";
 
 function App() {
-  // const navigate = useNavigate()
   const dispatch = useDispatch()
+  const is_Loaded = useSelector(state => state.wordlist.get("is_Loaded"))
   useEffect(() => {
     dispatch(loadWordFB())
   })
@@ -24,7 +25,7 @@ function App() {
 
         <Router>
           <Routes>
-            <Route path="/*" element={<Home />}></Route>
+            <Route path="/*" element={is_Loaded ? <Home /> : <Spinner />}></Route>
             <Route path="/new" element={<NewWord />}></Route>
             <Route path="/update/:word_id" element={<UpdateWord />}></Route>
           </Routes>
