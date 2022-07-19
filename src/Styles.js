@@ -61,38 +61,21 @@ export const NewButton = styled.div`
 `;
 
 export const WordContainer = styled.div`
-  /* max-width: 1200px; */
-  /* display: flex;
-    flex-wrap: row wrap; */
-  /* justify-content: flex-start; */
-  /* align-items: flex-start; */
-  /* align-content: flex-start; */
-  /* column-gap: 15px;
-    row-gap: 15px;
-    background-color: red; */
   display: grid;
   width: 100%;
   max-width: 1500px;
   padding: 1em;
   box-sizing: border-box;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  /* grid-auto-rows: 20px; */
   grid-gap: 15px;
 `;
 
 export const Card = styled.div`
   padding: 1.5em;
   border: 1px dashed ${(props) => props.theme.primary};
-  /* background-color: rgba(255,255,255,0.5); */
   border-radius: 10px;
   position: relative;
-  /* max-width: calc(100% - 80px); */
-  /* max-width: 1fr; */
-  /* width: 300px; */
-  /* width: calc(100% * (1/3) - 60px); */
   height: fit-content;
-  /* flex: 1 1 20%; */
-  /* margin: 10px; */
   transition: 0.2s all ease-in;
   background-color: ${(props) =>
     props.done ? props.theme.primary : "transparent"};
@@ -121,9 +104,15 @@ export const Card = styled.div`
   }
   .ex1 {
     color: dodgerblue;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .ex2 {
     color: dodgerblue;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 `;
 
@@ -147,24 +136,25 @@ export const ToolBox = styled.div`
 `;
 
 export const WordWriteForm = styled.div`
-    padding: 15px;
-    color: ${props => props.theme.primary};
-    input{
-        margin-bottom: 30px;
-        background-color: transparent;
-        border: 1px solid ${props => props.theme.main};
-        height: 2rem;
-        font-size: 1rem;
-        margin-left: 0;
-        padding-left: 10px;
-        border-radius: 10px;
-    }
-    .button{
-        background-color: ${props => props.theme.primary};
-        color: ${props => props.theme.light};
-        width: fit-content;
-        padding: 10px;
-        cursor: pointer;
-        border-radius: 10px;
-    }
-`
+  padding: 15px;
+  color: ${(props) => props.theme.primary};
+
+  input {
+    margin-bottom: 30px;
+    background-color: transparent;
+    border: 1px solid ${(props) => props.theme.main};
+    height: 2rem;
+    font-size: 1rem;
+    margin-left: 0;
+    padding-left: 10px;
+    border-radius: 10px;
+  }
+  .button {
+    background-color: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.light};
+    width: fit-content;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+`;
